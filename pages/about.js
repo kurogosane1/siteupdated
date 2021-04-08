@@ -1,13 +1,14 @@
+import Head from "next/head";
+
 const about = () => {
   return (
     <div>
-      <h1 className="about-heading">About Me</h1>
-      <div className="about-content">
-        <img
-          src="https://media.licdn.com/dms/image/C5603AQEkzAow_wUqPg/profile-displayphoto-shrink_200_200/0?e=1561593600&v=beta&t=nUsf9B1C9tcY8gk4zk6FCPl1s2aXa0H7uvLwYkx41vI"
-          alt=""
-          className="image"
-        />
+      <Head>
+        <title>About</title>
+        <meta name="description" content="A little fun fact about me." />
+      </Head>
+      <h1 className="">About Me</h1>
+      <div className="">
         <p>
           A little fun fact about me. During the day I am a working Accountant
           for an Oil and Gas Company. During the evening I am a coder, artist

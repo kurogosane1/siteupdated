@@ -1,11 +1,13 @@
 import Head from "next/head";
+import styles from "../styles/About.module.css";
+
 
 const about = () => {
   return (
-    <div>
+    <div className={styles.aboutContainer}>
       <Head>
         <title>About</title>
-        <meta name="description" content="A little fun fact about me." />
+        <meta name="About" content="A little fun fact about me." />
       </Head>
       <h1 className="">About Me</h1>
       <div className="">

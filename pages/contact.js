@@ -5,7 +5,7 @@ const contact = () => {
     <div className="Card-Contact">
       <Head>
         <title>Contact Me</title>
-        <meta name="description" content="Feel free to contact me" />
+        <meta name="description" content="Feel free to contact meÎ" />
       </Head>
       <div className="inner-Cards">
         <div className="Heading">

@@ -1,6 +1,11 @@
-// import React from 'react'
+import React, { useEffect } from "react";
+import axios from "axios";
 
-const projects = () => {
+const projects = (props) => {
+  useEffect(() => {
+    console.log(props);
+  }, []);
+
   return (
     <div>
       <div id="Port-heading">
@@ -234,5 +239,15 @@ const projects = () => {
   );
 };
 
-
 export default projects;
+
+export async function getServerSideProps(context) {
+  const data = await axios
+    .get("/api/data")
+    .then((response) => response)
+    .catch((err) => console.log(err));
+  console.log(`this is line 10` + data);
+  return {
+    props: { da: '' },
+  };
+}

@@ -5,18 +5,15 @@ const contact = () => {
     <div className="Card-Contact">
       <Head>
         <title>Contact Me</title>
-        <meta name="description" content="Feel free to contact meÎ" />
+        <meta name="description" content="Feel free to contact me" />
       </Head>
       <div className="inner-Cards">
-        <div className="Heading">
-          <h1>Contact</h1>
-        </div>
         <div className="Pitch">
           <span>Feel free to contact me</span>
           <br />
           <span>I'd love to speak with you</span>
           <br />
-          <span>Thank You</span>
+          {/* <span>Thank You</span> */}
         </div>
         <div className="Card-body">
           <ul className=" Social-network">

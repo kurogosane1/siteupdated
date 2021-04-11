@@ -1,0 +1,68 @@
+.projectContainer {
+  margin-top: 10rem;
+  overflow: auto;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.projectsHeader {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.projectsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: center;
+}
+
+.card {
+  background-color: red;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 15px;
+  grid-template-areas: "informationsas, imageses";
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* box-sizing: border-box; */
+  /* margin: 20px; */
+}
+
+.information {
+  /* grid-area: informationsas; */
+  grid-column: 1/2;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.information > h2 {
+  flex: 0.25;
+}
+
+.images {
+  /* height: 100%; */
+  box-sizing: border-box;
+  margin: 10px;
+  /* border-radius: 10px; */
+  /* position: absolute;  */
+  /* width: 100%; */
+  grid-column: 2/3;
+  /* grid-area: imageses; */
+  /* box-sizing: border-box; */
+  /* margin: 1rem; */
+}
+.images > img {
+  border-radius: 10px;
+}

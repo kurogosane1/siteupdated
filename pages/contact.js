@@ -1,34 +1,52 @@
 import Head from "next/head";
+import EmailIcon from "@material-ui/icons/Email";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import styles from "../styles/Contact.module.css";
 
 const contact = () => {
   return (
-    <div className="Card-Contact">
+    <div className={styles.CardContainer}>
       <Head>
-        <title>Contact Me</title>
+        <title>Syed Khurshid - Contact Me - Feel free to contact me</title>
         <meta name="description" content="Feel free to contact me" />
       </Head>
       <div className="inner-Cards">
-        <div className="Pitch">
+        <div className={styles.pitch}>
           <span>Feel free to contact me</span>
           <br />
           <span>I'd love to speak with you</span>
           <br />
-          {/* <span>Thank You</span> */}
+          <span>You can click on any of the options below</span>
         </div>
-        <div className="Card-body">
-          <ul className=" Social-network">
-            <a
-              className="email fas fa-envelope-open fa-3x"
-              href="mailto:magnite@hotmail.com?Subject=Hellotoyou"
-              target="_top"></a>
-            <a
-              className="linkedin fab fa-linkedin-in fa-3x"
-              href="https://www.linkedin.com/in/syed-khurshid/"
-              onclick="window.open(https://www.linkedin.com/in/syed-khurshid/)"></a>
-            <a
-              className="github fab fa-github fa-3x"
-              href="https://github.com/kurogosane1"></a>
-          </ul>
+        <div className={styles.cardbody}>
+          <EmailIcon
+            fontSize="large"
+            className={styles.linked}
+            onClick={() =>
+              window.open(
+                "mailto:syedskhurshid@gmail.com?Subject=Reaching out to you",
+                "_blank"
+              )
+            }
+          />
+          <LinkedInIcon
+            className={styles.linked}
+            fontSize="large"
+            onClick={() =>
+              window.open(
+                "https://www.linkedin.com/in/syed-khurshid/",
+                "_blank"
+              )
+            }
+          />
+          <GitHubIcon
+            className={styles.linked}
+            fontSize="large"
+            onClick={() =>
+              window.open("https://github.com/kurogosane1", "_blank")
+            }
+          />
         </div>
       </div>
     </div>

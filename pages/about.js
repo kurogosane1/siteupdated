@@ -5,7 +5,7 @@ const about = () => {
   return (
     <div className={styles.aboutContainer}>
       <Head>
-        <title>About</title>
+        <title>Syed Khurshid - About - A little fun fact about me</title>
         <meta name="title" content="A little fun fact about me." />
       </Head>
       <h1 className={styles.aboutTitle}>About Me</h1>

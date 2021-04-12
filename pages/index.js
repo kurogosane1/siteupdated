@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className="">
       <Head>
-        <title>Syed Khurshid</title>
+        <title>Syed Khurshid - Hello my name is </title>
         <meta name="description" content="Syed Khurshid" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

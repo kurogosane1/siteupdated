@@ -1,17 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "../styles/Projects.module.css";
 import WebIcon from "@material-ui/icons/Web";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import {
-  Card,
-  CardHeader,
-  CardMedia,
-  CardContent,
-  CardActions,
-} from "@material-ui/core";
-
-import axios from "axios";
-import Projects from "../components/Projects";
+import Head from "next/head";
 
 const projects = (props) => {
   const data = [
@@ -21,17 +12,17 @@ const projects = (props) => {
       description:
         "Tiptuity your cashless way of paying tips. Using your phone to scan the employee bar code and paying tips. Valet Employers using the tool can use track and monitor how much tip each employee has received and the vendors or location they were working receiving the tip. They add or remove employees, clients",
       toolsUsed:
-        "ReactJS, NodeJS, ExpressJS, MySQL, ContextAPI,API,Axios,PassportJS, Material UI, MongoDB",
+        "ReactJS, NodeJS, ExpressJS, MySQL, ContextAPI,API,Axios,PassportJS, Material UI, MongoDB, Stripe",
       githubLink: "https://github.com/kurogosane1/tiptuity",
       websiteLink: "https://tiptuityv2.herokuapp.com/",
     },
     {
       heading: "Linux is Beautiful",
-      cardImage: "https://i.imgur.com/fanvadO.png",
+      cardImage: "https://i.imgur.com/zB8PGh7.png",
       description:
         "A E-commerce website that was inspired Apple a online way of purchasing customized laptops related to Linux. Users are able to customize the Laptop and Tablet",
       toolsUsed:
-        "ReactJS, NodeJS, ExpressJS, MySQL, ContextAPI, API, Axios, PassportJS, Material UI, MongoDB",
+        "ReactJS, NodeJS, ExpressJS, MySQL, ContextAPI, API, Axios, PassportJS, Material UI, MongoDB, Stripe",
       githubLink: "https://github.com/kurogosane1/Linux-is-beautifulv3.0",
       websiteLink: "https://calm-dawn-32096.herokuapp.com",
     },
@@ -58,6 +49,12 @@ const projects = (props) => {
 
   return (
     <div className={styles.projectContainer}>
+      <Head>
+        <meta name="description" content="Personal projects" />
+        <title>
+          Syed Khurshid - Projects - Projects that have been done by me
+        </title>
+      </Head>
       <div className={styles.projectsHeader}>
         <h2>Projects</h2>
       </div>

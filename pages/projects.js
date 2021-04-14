@@ -1,8 +1,11 @@
-import React from "react";
+import React,{useEffect} from "react";
 import styles from "../styles/Projects.module.css";
 import WebIcon from "@material-ui/icons/Web";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import Head from "next/head";
+import Image from "next/image";
+import { images } from "../next.config";
+// import { images } from "../next.config";
 
 const projects = (props) => {
   const data = [
@@ -47,6 +50,10 @@ const projects = (props) => {
     },
   ];
 
+  useEffect(() => {
+    console.log(images);
+  }, []);
+
   return (
     <div className={styles.projectContainer}>
       <Head>
@@ -71,7 +78,13 @@ const projects = (props) => {
           return (
             <div className={styles.card}>
               <div className={styles.images}>
-                <img src={cardImage} alt={heading} height={300} width={300} />
+                <Image
+                  domain={images.domains}
+                  src={cardImage}
+                  alt={heading}
+                  height={320}
+                  width={450}
+                />
               </div>
               <div className={styles.information}>
                 <h2>{heading}</h2>

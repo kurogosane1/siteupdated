@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import styles from "../styles/Art.module.css";
 import Image from "next/image";
-import { images } from "../next.config";
+import images from "../next.config";
 
 const art = () => {
   return (

@@ -12,9 +12,6 @@ module.exports = {
       "pre00.deviantart.net",
     ],
   },
-  future: {
-    webpack5: true,
-  },
   // withImages: withImages(),
   // something: withImages(),
 };

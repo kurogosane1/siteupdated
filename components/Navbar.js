@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/Link";
+import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
 import Maintitle from "./Maintitle";
 // const withImages = require("next-images");

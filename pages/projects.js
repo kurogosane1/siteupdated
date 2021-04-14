@@ -78,8 +78,8 @@ const projects = (props) => {
           return (
             <div className={styles.card}>
               <div className={styles.images}>
-                <Image
-                  domain={images.domains}
+                <img
+                  // domain={images.domains}
                   src={cardImage}
                   alt={heading}
                   height={320}

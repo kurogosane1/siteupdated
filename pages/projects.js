@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import styles from "../styles/Projects.module.css";
 import WebIcon from "@material-ui/icons/Web";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -97,12 +97,16 @@ const projects = (props) => {
               </div>
               <div className={styles.links}>
                 <WebIcon
+                  style={{ cursor: pointer }}
                   onClick={() => window.open(websiteLink, "_blank")}
                   fontSize="large"
+                  className={styles.webLinks}
                 />
                 <GitHubIcon
+                  style={{ cursor: pointer }}
                   onClick={() => window.open(githubLink, "_blank")}
                   fontSize="large"
+                  className={styles.webLinks}
                 />
               </div>
             </div>

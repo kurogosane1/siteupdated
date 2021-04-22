@@ -100,10 +100,6 @@
   align-items: center;
   cursor: pointer;
 }
-.links:hover{
-  color: red;
-  background-color: red;
-}
 
 .webLinks {
   cursor: pointer;

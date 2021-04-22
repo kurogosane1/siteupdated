@@ -97,13 +97,11 @@ const projects = (props) => {
               </div>
               <div className={styles.links}>
                 <WebIcon
-                  style={{ cursor: pointer }}
                   onClick={() => window.open(websiteLink, "_blank")}
                   fontSize="large"
                   className={styles.webLinks}
                 />
                 <GitHubIcon
-                  style={{ cursor: pointer }}
                   onClick={() => window.open(githubLink, "_blank")}
                   fontSize="large"
                   className={styles.webLinks}

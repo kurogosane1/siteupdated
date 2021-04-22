@@ -55,7 +55,7 @@ const about = () => {
         type="button"
         onClick={() =>
           window.open(
-            "https://docs.google.com/document/d/1EpGDi3vhXRIigz3_bMSFTi1jfqDYGawJiYxAocgQ8Mw/edit?usp=sharing",
+            "https://drive.google.com/file/d/1Jg-dFS88q8s6B9cwC56nSwSfoSDaaFxu/view?usp=sharing",
             "_blank"
           )
         }>

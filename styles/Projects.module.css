@@ -32,7 +32,7 @@
   /* justify-content: space-evenly; */
   /* height: 100%; */
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
   gap: 20px;
   align-items: center;
   justify-content: space-evenly;
@@ -106,10 +106,4 @@
 }
 .webLinks:hover {
   color: red;
-}
-
-@media screen and (max-width: 750px) {
-  .projectContainer {
-    margin-top: 1rem;
-  }
 }

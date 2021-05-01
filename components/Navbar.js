@@ -7,16 +7,14 @@ import Maintitle from "./Maintitle";
 export default function Navbar() {
   const [sel, setSel] = useState(0);
   const [open, setOpen] = useState(true);
+  const [width, setWidth] = useState(0);
 
   const hideNavbar = () => {
     setOpen(!open);
-    console.log("This ran in the front side");
-    console.log(open);
   };
 
   useEffect(() => {
-    console.log(sel);
-    console.log(open);
+    setWidth(window.innerWidth);
   }, []);
   return (
     <nav className={styles.navcontainer}>
@@ -25,7 +23,14 @@ export default function Navbar() {
         <li>
           <Link href="/" className={styles.navLinks} key="1">
             <a
-              onClick={() => setSel(1)}
+              onClick={
+                width < 450
+                  ? () => {
+                      setSel(1);
+                      setOpen(!open);
+                    }
+                  : () => setSel(1)
+              }
               className={sel === 1 ? styles.activeLinks : styles.navLinks}>
               Home
             </a>
@@ -34,7 +39,14 @@ export default function Navbar() {
         <li>
           <Link href="/about" key="2">
             <a
-              onClick={() => setSel(2)}
+              onClick={
+                width < 450
+                  ? () => {
+                      setSel(2);
+                      setOpen(!open);
+                    }
+                  : () => setSel(2)
+              }
               className={sel === 2 ? styles.activeLinks : styles.navLinks}>
               About
             </a>
@@ -43,7 +55,14 @@ export default function Navbar() {
         <li>
           <Link href="/projects" key="3">
             <a
-              onClick={() => setSel(3)}
+              onClick={
+                width < 450
+                  ? () => {
+                      setSel(3);
+                      setOpen(!open);
+                    }
+                  : () => setSel(3)
+              }
               className={sel === 3 ? styles.activeLinks : styles.navLinks}>
               Projects
             </a>
@@ -52,7 +71,14 @@ export default function Navbar() {
         <li>
           <Link href="/art" key="4">
             <a
-              onClick={() => setSel(4)}
+              onClick={
+                width < 450
+                  ? () => {
+                      setSel(4);
+                      setOpen(!open);
+                    }
+                  : () => setSel(4)
+              }
               className={sel === 4 ? styles.activeLinks : styles.navLinks}>
               Art
             </a>
@@ -61,7 +87,14 @@ export default function Navbar() {
         <li>
           <Link href="/contact" key="5">
             <a
-              onClick={() => setSel(5)}
+              onClick={
+                width < 450
+                  ? () => {
+                      setSel(5);
+                      setOpen(!open);
+                    }
+                  : () => setSel(5)
+              }
               className={sel === 5 ? styles.activeLinks : styles.navLinks}>
               Contact
             </a>

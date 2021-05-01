@@ -53,6 +53,7 @@
     transition: all 1s ease-in-out;
     height: auto;
     overflow: none;
+    backdrop-filter: blur(40px);
   }
 
   .navbar {

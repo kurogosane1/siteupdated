@@ -9,7 +9,13 @@ let options;
 export default function Home() {
   useEffect(() => {
     options = {
-      strings: ["Full Stack Developer", "Accountant", "Artist", "Analyst"],
+      strings: [
+        "Full Stack Developer",
+        "ReactJS developer",
+        "Accountant",
+        "Analyst",
+        "Artist",
+      ],
       typeSpeed: 60,
       backSpeed: 60,
       loop: true,

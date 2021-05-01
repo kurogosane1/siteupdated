@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 7rem;
+  margin-top: 8rem;
 }
 
 .aboutTitle {
@@ -16,7 +16,7 @@
 .aboutContent {
   box-sizing: border-box;
   width: 50%;
-  padding: rem;
+  padding: 1rem;
   margin: 0 2rem;
   display: flex;
   flex-direction: column;
@@ -37,4 +37,12 @@
   font-family: "Sarala", sans-serif;
   background: linear-gradient(145deg, #f0f0f0, #cacaca);
   box-shadow: 7px 7px 3px #d3d3d3, -7px -7px 3px #ededed;
+}
+
+@media screen and (max-width: 750px) {
+  .aboutContent {
+    margin: auto;
+    /* padding: 1rem; */
+    width: 100%;
+  }
 }

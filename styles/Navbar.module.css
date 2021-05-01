@@ -27,6 +27,7 @@
   justify-content: space-evenly;
   align-items: center;
   list-style: none;
+  background: transparent;
 }
 
 .hamburger {

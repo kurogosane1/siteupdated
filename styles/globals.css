@@ -11,6 +11,14 @@ body {
   margin: 0;
   font-family: "Sarala", sans-serif;
   background-color: #f0f0f0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none;
 }
 
 a {
@@ -21,3 +29,5 @@ a {
 * {
   box-sizing: border-box;
 }
+
+

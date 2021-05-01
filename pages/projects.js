@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "../styles/Projects.module.css";
 import WebIcon from "@material-ui/icons/Web";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -50,10 +50,6 @@ const projects = (props) => {
     },
   ];
 
-  useEffect(() => {
-    console.log(images);
-  }, []);
-
   return (
     <div className={styles.projectContainer}>
       <Head>
@@ -66,7 +62,7 @@ const projects = (props) => {
         <h2>Projects</h2>
       </div>
       <div className={styles.projectsContainer}>
-        {data.map((info) => {
+        {data.map((info, index) => {
           const {
             heading,
             cardImage,
@@ -76,7 +72,7 @@ const projects = (props) => {
             websiteLink,
           } = info;
           return (
-            <div className={styles.card}>
+            <div className={styles.card} key={index}>
               <div className={styles.images}>
                 <img
                   // domain={images.domains}

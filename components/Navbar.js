@@ -6,7 +6,7 @@ import Maintitle from "./Maintitle";
 
 export default function Navbar() {
   const [sel, setSel] = useState(0);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const hideNavbar = () => {
     setOpen(!open);
@@ -20,8 +20,8 @@ export default function Navbar() {
   }, []);
   return (
     <nav className={styles.navcontainer}>
-      <Maintitle hide={hideNavbar} />
-      <ul className={styles.navbar}>
+      <Maintitle hide={hideNavbar} open={open} />
+      <ul className={open ? styles.navbar : styles.navbar_open}>
         <li>
           <Link href="/" className={styles.navLinks} key="1">
             <a

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 // import Icons from "../assets/Hamburger.svg";
 import styles from "../styles/Navbar.module.css";
 
-function Maintitle({ hide }) {
-  const hideNavbar = hide;
+function Maintitle({ hide, open }) {
+  // const [hideNav, setHideNav] = useState(true);
 
   return (
     <div className={styles.navsection}>
@@ -17,7 +17,9 @@ function Maintitle({ hide }) {
         className={styles.hamburger}
         onClick={() => hideNavbar()}
       /> */}
-      <div className={styles.burger_menu}></div>
+      <div
+        className={open ? styles.burger_menu : styles.burger_menu_open}
+        onClick={() => hide(!open)}></div>
     </div>
   );
 }

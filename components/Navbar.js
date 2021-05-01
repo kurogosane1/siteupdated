@@ -24,7 +24,7 @@ export default function Navbar() {
           <Link href="/" className={styles.navLinks} key="1">
             <a
               onClick={
-                width < 450
+                width < 750
                   ? () => {
                       setSel(1);
                       setOpen(!open);
@@ -40,7 +40,7 @@ export default function Navbar() {
           <Link href="/about" key="2">
             <a
               onClick={
-                width < 450
+                width < 750
                   ? () => {
                       setSel(2);
                       setOpen(!open);
@@ -56,7 +56,7 @@ export default function Navbar() {
           <Link href="/projects" key="3">
             <a
               onClick={
-                width < 450
+                width < 750
                   ? () => {
                       setSel(3);
                       setOpen(!open);
@@ -72,7 +72,7 @@ export default function Navbar() {
           <Link href="/art" key="4">
             <a
               onClick={
-                width < 450
+                width < 750
                   ? () => {
                       setSel(4);
                       setOpen(!open);
@@ -88,7 +88,7 @@ export default function Navbar() {
           <Link href="/contact" key="5">
             <a
               onClick={
-                width < 450
+                width < 750
                   ? () => {
                       setSel(5);
                       setOpen(!open);

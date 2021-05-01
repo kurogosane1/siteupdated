@@ -1,6 +1,7 @@
 .projectContainer {
   margin-top: 7rem;
-  /* overflow: hidden; */
+  overflow: hidden;
+  z-index: 0;
   /* height: 100%; */
   box-sizing: border-box;
   padding: 1rem;
@@ -31,8 +32,9 @@
   /* align-items: center; */
   /* justify-content: space-evenly; */
   /* height: 100%; */
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(456px, 1fr));
   gap: 20px;
   align-items: center;
   justify-content: space-evenly;

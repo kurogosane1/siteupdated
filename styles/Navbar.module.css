@@ -3,6 +3,7 @@
   padding: 1rem;
   width: 100vw;
   position: fixed;
+  z-index: 2;
   top: 0;
   display: flex;
   flex-direction: column;

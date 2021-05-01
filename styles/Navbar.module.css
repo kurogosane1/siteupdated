@@ -72,6 +72,10 @@
     list-style: none;
     background: transparent;
   }
+  .navLinks {
+    background: transparent;
+    backdrop-filter: blur(40px);
+  }
 
   .navcontainer {
     backdrop-filter: blur(40px);

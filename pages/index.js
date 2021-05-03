@@ -32,7 +32,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.frontContainer}>
-        <h1>Hello my name is Syed Khurshid</h1>
+        <h1>Hi, I'm Syed</h1>
         <span>I am a </span>
         <span className="element" id={typed}></span>
       </div>

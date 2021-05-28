@@ -55,8 +55,7 @@ const about = () => {
         type="button"
         onClick={() =>
           window.open(
-            "https://drive.google.com/file/d/1Jg-dFS88q8s6B9cwC56nSwSfoSDaaFxu/view?usp=sharing",
-            "_blank"
+            "https://drive.google.com/file/d/1KkROjM3WnHTrX53DUFr-nG36-DDy99e0/view?usp=sharing"
           )
         }>
         Resume

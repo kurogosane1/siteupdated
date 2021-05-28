@@ -11,13 +11,12 @@ const projects = (props) => {
   const data = [
     {
       heading: "Sleep App",
-      cardImage: "https://imgur.com/a/y6oKc8S",
+      cardImage: "/static/Quiet_Night_Camp.jpeg",
       description:
         "Sleep App that was inspired by Sleepiest App. Sleep App provides users with Sounds that nurture you to sleep, meditations that guide you to sleep, or if you are a fan of bedtime stories then narations by special guests stories",
       toolsUsed:
         "React Native, React-Navigation, Expo, Expo-AV, React-native-paper, Styled-Componenets",
-      githubLink: "https://github.com/kurogosane1/tiptuity",
-      websiteLink: "https://tiptuityv2.herokuapp.com/",
+      githubLink: "https://github.com/kurogosane1/SleepiestApp",
     },
     {
       heading: "Tiptuity",
@@ -37,8 +36,8 @@ const projects = (props) => {
 
       toolsUsed:
         "ReactJS, NodeJS, ExpressJS, MySQL, ContextAPI, API, Axios, PassportJS, Material UI, MongoDB, Stripe, Demo can be seen on the Github Page",
-      githubLink: "https://github.com/kurogosane1/SleepiestApp",
-      websiteLink: "",
+      githubLink: "https://github.com/kurogosane1/Linux-is-beautifulv3.0",
+      websiteLink: "https://calm-dawn-32096.herokuapp.com/",
     },
     {
       heading: "Movie Database",
@@ -57,7 +56,7 @@ const projects = (props) => {
         "A ReactJS mixed with ElectronJS combined to produce a Markdown Notetaking app. The purpose is simply to show that ReactJS is capable of working with Electron. Meant to be run as a Desktop Application only!",
       toolsUsed: "ReactJS, ElectronJS, API, NodeJS,  ExpressJS",
       githubLink: "https://github.com/kurogosane1/ElectronNoteTaking",
-      websiteLink: "",
+     
     },
   ];
 
@@ -103,16 +102,20 @@ const projects = (props) => {
                 </div>
               </div>
               <div className={styles.links}>
-                <WebIcon
-                  onClick={() => window.open(websiteLink, "_blank")}
-                  fontSize="large"
-                  className={styles.webLinks}
-                />
-                <GitHubIcon
-                  onClick={() => window.open(githubLink, "_blank")}
-                  fontSize="large"
-                  className={styles.webLinks}
-                />
+                {websiteLink ? (
+                  <WebIcon
+                    onClick={() => window.open(websiteLink, "_blank")}
+                    fontSize="large"
+                    className={styles.webLinks}
+                  />
+                ) : null}
+                {githubLink ? (
+                  <GitHubIcon
+                    onClick={() => window.open(githubLink, "_blank")}
+                    fontSize="large"
+                    className={styles.webLinks}
+                  />
+                ) : null}
               </div>
             </div>
           );

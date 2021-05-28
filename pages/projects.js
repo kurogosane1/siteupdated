@@ -10,6 +10,16 @@ import { images } from "../next.config";
 const projects = (props) => {
   const data = [
     {
+      heading: "Sleep App",
+      cardImage: "https://imgur.com/a/y6oKc8S",
+      description:
+        "Sleep App that was inspired by Sleepiest App. Sleep App provides users with Sounds that nurture you to sleep, meditations that guide you to sleep, or if you are a fan of bedtime stories then narations by special guests stories",
+      toolsUsed:
+        "React Native, React-Navigation, Expo, Expo-AV, React-native-paper, Styled-Componenets",
+      githubLink: "https://github.com/kurogosane1/tiptuity",
+      websiteLink: "https://tiptuityv2.herokuapp.com/",
+    },
+    {
       heading: "Tiptuity",
       cardImage: "https://i.imgur.com/fanvadO.png",
       description:
@@ -24,10 +34,11 @@ const projects = (props) => {
       cardImage: "https://i.imgur.com/zB8PGh7.png",
       description:
         "A E-commerce website that was inspired Apple a online way of purchasing customized laptops related to Linux. Users are able to customize the Laptop and Tablet",
+
       toolsUsed:
-        "ReactJS, NodeJS, ExpressJS, MySQL, ContextAPI, API, Axios, PassportJS, Material UI, MongoDB, Stripe",
-      githubLink: "https://github.com/kurogosane1/Linux-is-beautifulv3.0",
-      websiteLink: "https://calm-dawn-32096.herokuapp.com",
+        "ReactJS, NodeJS, ExpressJS, MySQL, ContextAPI, API, Axios, PassportJS, Material UI, MongoDB, Stripe, Demo can be seen on the Github Page",
+      githubLink: "https://github.com/kurogosane1/SleepiestApp",
+      websiteLink: "",
     },
     {
       heading: "Movie Database",

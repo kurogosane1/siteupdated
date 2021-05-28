@@ -10,6 +10,7 @@ module.exports = {
       "camo.githubusercontent.com",
       "i.imgur.com",
       "pre00.deviantart.net",
+      "imgur.com",
     ],
   },
   // withImages: withImages(),

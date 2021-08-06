@@ -8,8 +8,8 @@ const about = () => {
         <title>Syed Khurshid - About - A little fun fact about me</title>
         <meta name="title" content="A little fun fact about me." />
       </Head>
-      <h1 className={styles.aboutTitle}>About Me</h1>
       <div className={styles.aboutContent}>
+        <h1 className={styles.aboutTitle}>About Me</h1>
         <span>
           {/* A little fun fact about me. During the day I am a working Accountant
           for an Oil and Gas Company. During the evening I am a coder, artist
@@ -50,7 +50,7 @@ const about = () => {
         </span>
       </div>
       <br />
-      <button
+      {/* <button
         className={styles.resume}
         type="button"
         onClick={() =>
@@ -59,7 +59,29 @@ const about = () => {
           )
         }>
         Resume
-      </button>
+      </button> */}
+      <div>
+        <h2>Skills/Tools</h2>
+        <ul className={styles.skillset}>
+          <li>HTML5</li>
+          <li>CSS3/SCSS</li>
+          <li>JavaScript</li>
+          <li>ReactJS</li>
+          <li>NextJS</li>
+          <li>NodeJS</li>
+          <li>ExpressJS</li>
+          <li>GraphQL</li>
+          <li>PostgreSQL</li>
+          <li>MySQL</li>
+          <li>MongoDB</li>
+          <li>Reddis</li>
+          <li>Sequalize</li>
+          <li>Docker</li>
+          <li>CI/CD</li>
+          <li>CircleCI</li>
+          <li>Python</li>
+        </ul>
+      </div>
     </div>
   );
 };

@@ -26,7 +26,7 @@ const projects = (props) => {
       toolsUsed:
         "ReactJS, NodeJS, ExpressJS, MySQL, ContextAPI,API,Axios,PassportJS, Material UI, MongoDB, Stripe",
       githubLink: "https://github.com/kurogosane1/tiptuity",
-      websiteLink: "https://tiptuityv2.herokuapp.com/",
+      websiteLink: "https://tiptuity.herokuapp.com/",
     },
     {
       heading: "Linux is Beautiful",
@@ -56,7 +56,6 @@ const projects = (props) => {
         "A ReactJS mixed with ElectronJS combined to produce a Markdown Notetaking app. The purpose is simply to show that ReactJS is capable of working with Electron. Meant to be run as a Desktop Application only!",
       toolsUsed: "ReactJS, ElectronJS, API, NodeJS,  ExpressJS",
       githubLink: "https://github.com/kurogosane1/ElectronNoteTaking",
-     
     },
   ];
 

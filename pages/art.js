@@ -1,151 +1,83 @@
 import React from "react";
-import Head from "next/head";
-import styles from "../styles/Art.module.css";
+import { createClient } from "contentful";
+import {
+  AboutHeading,
+  Container,
+  AboutH,
+  ArtContainer,
+  ArtSubContainer,
+} from "../styledComponents";
 import Image from "next/image";
 import images from "../next.config";
+import Link from "next/link";
+import { ProjectsList, LeftArt, RightArt } from "../components/Variants";
+import { motion, AnimatePresence, useViewportScroll } from "framer-motion";
 
-const art = () => {
+function art(props) {
+  const { items } = props.data;
+
   return (
-    <div className={styles.artContainer}>
-      <Head>
-        <title>Syed Khurshid - Art - Personal Projects done by me</title>
-        <meta name="description" content="Personal art that was made by me" />
-        <meta name="keywords" content="Syed Khurshid Art" />
-      </Head>
-
-      <div className={styles.artHeader}>
-        <h2 id="heading">Personal Hobby</h2>
-      </div>
-      <div className={styles.artSection}>
-        <div className={styles.artImg}>
-          <Image
-            domain={images.domains}
-            src="https://pre00.deviantart.net/646c/th/pre/f/2015/087/2/1/yumi_jeong_in_hannuedul_by_kurogosane1-d8nixxq.jpg"
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-        <div className={styles.artImg}>
-          <Image
-            domain={images.domains}
-            src={`https://pre00.deviantart.net/c3d1/th/pre/f/2013/327/c/8/soo_young_by_kurogosane1-d6vdpfa.jpg`}
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-        <div className={styles.artImg}>
-          <Image
-            domain={images.domains}
-            src="https://img00.deviantart.net/c2cb/i/2012/302/e/3/scenery_drawing_by_kurogosane1-d5jcg4p.jpg"
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-        <div className={styles.artImg}>
-          <Image
-            domain={images.domains}
-            src="https://pre00.deviantart.net/8c76/th/pre/i/2012/253/a/5/pakistani_nightingale_by_kurogosane1-d5eafbe.jpg"
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-        <div className={styles.artImg}>
-          <Image
-            domain={images.domains}
-            src="https://pre00.deviantart.net/8963/th/pre/i/2012/253/f/0/sarah_drew_by_kurogosane1-d5eae4z.jpg"
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-        <div className={styles.artImg}>
-          <Image
-            domain={images.domains}
-            src="https://pre00.deviantart.net/0096/th/pre/i/2012/253/5/b/hear_our_prayer_by_kurogosane1-d5eaeli.jpg"
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-        <div className={styles.artImg}>
-          <Image
-            domain={images.domains}
-            src="https://img00.deviantart.net/a6b2/i/2012/364/e/5/mountain_scenery_by_kurogosane1-d5potrx.jpg"
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-        <div className={styles.artImg}>
-          <Image
-            domain={images.domains}
-            src="https://img00.deviantart.net/f98b/i/2012/364/c/5/blue_mosque_first_interior_by_kurogosane1-d5pou81.jpg"
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-        <div className={styles.artImg}>
-          <Image
-            domain={images.domains}
-            src="https://orig00.deviantart.net/1336/f/2012/253/1/b/belldandy_by_kurogosane1-d5eaf2n.jpg"
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-        <div className={styles.artImg}>
-          <Image
-            domain={images.domains}
-            src="https://pre00.deviantart.net/3cec/th/pre/i/2012/325/4/5/bosche_style_drawing_2nd_work_by_kurogosane1-d5lrnjq.jpg"
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-        <div className={styles.artImg}>
-          <Image
-            domain={images.domains}
-            src="https://img00.deviantart.net/e3e7/i/2012/253/4/6/spanish_armada_by_kurogosane1-d5eaeq3.jpg"
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-        <div className={styles.artImg}>
-          <Image
-            domain={images.domains}
-            src="https://pre00.deviantart.net/f48d/th/pre/i/2012/224/5/6/memory_lane_by_kurogosane1-d5atpgx.jpg"
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-        <div className={styles.artImg}>
-          <Image
-            domain={images.domains}
-            src="https://orig00.deviantart.net/db44/f/2012/253/6/d/church_in_england_by_kurogosane1-d5eadiy.jpg"
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-        <div className={styles.artImg} s>
-          <Image
-            domain={images.domains}
-            src="https://orig00.deviantart.net/1d19/f/2012/253/1/f/sister_esther_by_kurogosane1-d5eae07.jpg"
-            alt=""
-            width={450}
-            height={500}
-          />
-        </div>
-      </div>
-    </div>
+    <Container>
+      <AnimatePresence>
+        <ArtSubContainer>
+          <AboutH
+            style={{ marginRight: "20px" }}
+            variants={LeftArt}
+            initial="initial"
+            animate="animate">
+            Personal
+          </AboutH>
+          <AboutHeading variants={RightArt} initial="initial" animate="animate">
+            Hobbies
+          </AboutHeading>
+        </ArtSubContainer>
+        <ArtContainer>
+          <ArtSubContainer>
+            {items &&
+              items.map((data, index) => {
+                return (
+                  <motion.div
+                    variants={ProjectsList}
+                    initial="initial"
+                    animate="animate"
+                    custom={index}
+                    key={data.fields.heading + index + index}
+                    style={{ cursor: "pointer" }}
+                    whileHover={{ y: -50, scale: 1.1 }}>
+                    <Link passHref={true} href={data.fields.links}>
+                      <a target="_blank">
+                        <Image
+                          domain={images.domain}
+                          src={data.fields.links}
+                          alt={data.fields.heading}
+                          width={500}
+                          height={450}
+                          style={{ margin: "10px" }}
+                        />
+                      </a>
+                    </Link>
+                  </motion.div>
+                );
+              })}
+          </ArtSubContainer>
+        </ArtContainer>
+      </AnimatePresence>
+    </Container>
   );
-};
+}
 
 export default art;
+
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.SPACE_ID,
+    accessToken: process.env.ACCESS_TOKEN,
+  });
+
+  const res = await client.getEntries({ content_type: "art" });
+  return {
+    props: {
+      data: res,
+    },
+  };
+}

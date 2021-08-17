@@ -1,127 +1,129 @@
 import React from "react";
-import styles from "../styles/Projects.module.css";
-import WebIcon from "@material-ui/icons/Web";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import {
+  AboutHeading,
+  Container,
+  Row,
+  SubAboutContainer,
+  ProjectContainer,
+  ProjectDescription,
+  IntroSpan,
+  AboutH,
+} from "../styledComponents";
+import Link from "next/link";
+import { Lists, ProjectsList } from "../components/Variants";
+
 import Head from "next/head";
-import Image from "next/image";
-import { images } from "../next.config";
-// import { images } from "../next.config";
+import { createClient } from "contentful";
 
 const projects = (props) => {
-  const data = [
-    {
-      heading: "Sleep App",
-      cardImage: "/static/Quiet_Night_Camp.jpeg",
-      description:
-        "Sleep App that was inspired by Sleepiest App. Sleep App provides users with Sounds that nurture you to sleep, meditations that guide you to sleep, or if you are a fan of bedtime stories then narations by special guests stories",
-      toolsUsed:
-        "React Native, React-Navigation, Expo, Expo-AV, React-native-paper, Styled-Componenets",
-      githubLink: "https://github.com/kurogosane1/SleepiestApp",
-    },
-    {
-      heading: "Tiptuity",
-      cardImage: "https://i.imgur.com/fanvadO.png",
-      description:
-        "Tiptuity your cashless way of paying tips. Using your phone to scan the employee bar code and paying tips. Valet Employers using the tool can use track and monitor how much tip each employee has received and the vendors or location they were working receiving the tip. They add or remove employees, clients",
-      toolsUsed:
-        "ReactJS, NodeJS, ExpressJS, MySQL, ContextAPI,API,Axios,PassportJS, Material UI, MongoDB, Stripe",
-      githubLink: "https://github.com/kurogosane1/tiptuity",
-      websiteLink: "https://tiptuity.herokuapp.com/",
-    },
-    {
-      heading: "Linux is Beautiful",
-      cardImage: "https://i.imgur.com/zB8PGh7.png",
-      description:
-        "A E-commerce website that was inspired Apple a online way of purchasing customized laptops related to Linux. Users are able to customize the Laptop and Tablet",
-
-      toolsUsed:
-        "ReactJS, NodeJS, ExpressJS, MySQL, ContextAPI, API, Axios, PassportJS, Material UI, MongoDB, Stripe, Demo can be seen on the Github Page",
-      githubLink: "https://github.com/kurogosane1/Linux-is-beautifulv3.0",
-      websiteLink: "https://calm-dawn-32096.herokuapp.com/",
-    },
-    {
-      heading: "Movie Database",
-      cardImage: "https://i.imgur.com/9fkTdxDl.png",
-      description:
-        "A React based rendition of the moviedatabase that has an API connection. It shows all the latest movies and information in details",
-      githubLink: "https://github.com/kurogosane1/Movie-Database-App",
-      toolsUsed: "ReactJS, React-Spring, API, JSON, IMDB API",
-      websiteLink: "https://moviedb22222222.herokuapp.com/",
-    },
-    {
-      heading: "Markdown Electron NoteTaker",
-      cardImage:
-        "https://camo.githubusercontent.com/763ef9b670dec1766f11d76af9dfb0b57037b129/68747470733a2f2f692e696d6775722e636f6d2f314e795679556d2e706e67",
-      description:
-        "A ReactJS mixed with ElectronJS combined to produce a Markdown Notetaking app. The purpose is simply to show that ReactJS is capable of working with Electron. Meant to be run as a Desktop Application only!",
-      toolsUsed: "ReactJS, ElectronJS, API, NodeJS,  ExpressJS",
-      githubLink: "https://github.com/kurogosane1/ElectronNoteTaking",
-    },
-  ];
+  const { items } = props.data;
 
   return (
-    <div className={styles.projectContainer}>
+    <Container>
       <Head>
         <meta name="description" content="Personal projects" />
-        <title>
-          Syed Khurshid - Projects - Projects that have been done by me
-        </title>
+        <title>Syed Khurshid - Projects and Case Studies</title>
       </Head>
-      <div className={styles.projectsHeader}>
-        <h2>Projects</h2>
-      </div>
-      <div className={styles.projectsContainer}>
-        {data.map((info, index) => {
-          const {
-            heading,
-            cardImage,
-            description,
-            toolsUsed,
-            githubLink,
-            websiteLink,
-          } = info;
-          return (
-            <div className={styles.card} key={index}>
-              <div className={styles.images}>
-                <img
-                  // domain={images.domains}
-                  src={cardImage}
-                  alt={heading}
-                  height={320}
-                  width={450}
-                />
-              </div>
-              <div className={styles.information}>
-                <h2>{heading}</h2>
-                <div className={styles.description}>
-                  <span>{description}</span>
-                </div>
-                <div className={styles.tools}>
-                  <span>{toolsUsed}</span>
-                </div>
-              </div>
-              <div className={styles.links}>
-                {websiteLink ? (
-                  <WebIcon
-                    onClick={() => window.open(websiteLink, "_blank")}
-                    fontSize="large"
-                    className={styles.webLinks}
+      <SubAboutContainer top={10} right={50} bottom={0} left={50}>
+        <Row>
+          <AboutH
+            style={{ letterSpacing: "1px" }}
+            variants={Lists}
+            initial="initial"
+            animate="animate">
+            Case Studies
+          </AboutH>
+          <AboutHeading
+            style={{ letterSpacing: "1px" }}
+            variants={Lists}
+            initial="initial"
+            animate="animate">
+            & Personal Projects
+          </AboutHeading>
+        </Row>
+        <Row>
+          <IntroSpan variants={Lists} initial="initial" animate="animate">
+            Case studies of personal projects. Design is constantly being
+            improved and will continue to do so in the future
+          </IntroSpan>
+          <br />
+          <IntroSpan variants={Lists} initial="initial" animate="animate">
+            Future projects will continue to be added here
+          </IntroSpan>
+        </Row>
+      </SubAboutContainer>
+      <SubAboutContainer style={{ width: "100%" }}>
+        <Row
+          style={{
+            flexWrap: "wrap",
+            width: "100%",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            gap: "10px",
+          }}>
+          {items &&
+            items.map((data, index) => {
+              const { websiteLink } = data.fields;
+              return (
+                <ProjectContainer
+                  key={data.sys.id}
+                  variants={ProjectsList}
+                  initial="initial"
+                  animate="animate"
+                  whileHover={{ y: -50, scale: 1.1 }}
+                  custom={index}>
+                  <img
+                    src={data.fields.cardImage[0].fields.file.url}
+                    alt={data.fields.heading}
+                    // width={500}
+                    // height={400}
+                    style={{ objectFit: "contain" }}
                   />
-                ) : null}
-                {githubLink ? (
-                  <GitHubIcon
-                    onClick={() => window.open(githubLink, "_blank")}
-                    fontSize="large"
-                    className={styles.webLinks}
-                  />
-                ) : null}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+
+                  <ProjectDescription>
+                    <h4 style={{ color: "white" }}>0{index + 1} </h4>
+                    <h4> ---- </h4>
+                    <h4>{data.fields.heading}</h4>
+                    <p>{data.fields.description.content[0].content[0].value}</p>
+                    {data.fields.githubLink && (
+                      <Link href={data.fields.githubLink} passHref={true}>
+                        <a target="_blank">
+                          <i className="bx bxl-github"></i>
+                        </a>
+                      </Link>
+                    )}
+                    {websiteLink &&
+                      websiteLink.map((url, index) => {
+                        return (
+                          <Link href={url} passHref={true}>
+                            <a target="_blank">
+                              <i className="bx bx-link-external" />
+                            </a>
+                          </Link>
+                        );
+                      })}
+                  </ProjectDescription>
+                </ProjectContainer>
+              );
+            })}
+        </Row>
+      </SubAboutContainer>
+    </Container>
   );
 };
 
 export default projects;
+
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.SPACE_ID,
+    accessToken: process.env.ACCESS_TOKEN,
+  });
+
+  const res = await client.getEntries({ content_type: "projects" });
+  return {
+    props: {
+      data: res,
+    },
+  };
+}

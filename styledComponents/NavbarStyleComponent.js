@@ -48,3 +48,63 @@ export const FrontLinks = styled.ul`
     display: none;
   }
 `;
+
+export const HamMenu = styled(motion.div)`
+  cursor: pointer;
+  @media (min-width: 960px) {
+    display: none;
+  }
+  :hover {
+    background-color: #f5f5f7;
+    border-radius: 12px;
+    color: #151515;
+  }
+`;
+
+export const SideNavbar = styled(motion.div)`
+  @media (min-width: 960px) {
+    display: none;
+  }
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0px auto 150px auto;
+  margin: 0px auto;
+  position: fixed;
+  left: 0;
+  top: 70px;
+  height: calc(100vh - 70px);
+  width: 100vw;
+  background-color: red;
+  z-index: 9999;
+`;
+
+export const SideLinks = styled(motion.div)`
+  @media (min-width: 960px) {
+    display: none;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+  height: 90%;
+  font-size: 5vw;
+  list-style: none;
+  width: 100%;
+  li > a {
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    color: #f5f5f7;
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 17px;
+    transition: all ease-in-out 0.25s;
+  }
+
+  li > a :hover {
+    background-color: #f5f5f7;
+    border-radius: 12px;
+    color: #151515;
+  }
+`;

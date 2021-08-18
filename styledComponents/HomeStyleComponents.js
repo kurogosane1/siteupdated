@@ -6,20 +6,28 @@ export const Container = styled(motion.div)`
   flex-direction: column;
   min-height: calc(100vh - 70px);
   height: 100%;
-  width: 100%;
+
+  overflow: hidden;
   /* background-color: #222222; */
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 960px) {
+    padding: 10px 20px;
+  }
 `;
 
 export const SubContainer = styled(motion.div)`
   /* max-width: 50vw; */
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 0 40px 0 170px;
   margin: 0 5vw;
+
   @media (max-width: 960px) {
-    padding: 10px;
+    padding: 10px 20px;
+    margin: 0 20px;
   }
   @media (min-width: 1500px) {
     max-width: 1800px;
@@ -64,6 +72,10 @@ export const IntroHeading = styled(motion.h1)`
   line-height: 1.5;
   color: #f5f5f5;
   letter-spacing: 2px;
+
+  @media (max-width: 960px) {
+    font-size: 9.5vw;
+  }
 
   @media (max-width: 960px) {
     font-size: 9.5vw;

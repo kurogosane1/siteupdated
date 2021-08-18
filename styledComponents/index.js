@@ -11,6 +11,9 @@ export {
   NavBarContainer,
   Navblock,
   FrontLinks,
+  SideNavbar,
+  SideLinks,
+  HamMenu,
 } from "../styledComponents/NavbarStyleComponent";
 
 export {

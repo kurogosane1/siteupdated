@@ -1,6 +1,14 @@
-import React from "react";
-import { NavBarContainer, Navblock, FrontLinks } from "../styledComponents";
+import React, { useState } from "react";
+import {
+  NavBarContainer,
+  Navblock,
+  FrontLinks,
+  SideNavbar,
+  SideLinks,
+  HamMenu,
+} from "../styledComponents";
 import Link from "next/link";
+import { SideList } from "./Variants";
 
 function Navbar() {
   const multipleLinks = [
@@ -21,6 +29,9 @@ function Navbar() {
       title: "Blog",
     },
   ];
+
+  // This is where the state of the sidenavbar will be
+  const [open, setOpen] = useState(true);
   return (
     <NavBarContainer>
       <Navblock>
@@ -39,7 +50,37 @@ function Navbar() {
             );
           })}
         </FrontLinks>
+        {!open && (
+          <HamMenu onClick={() => setOpen(true)}>
+            <i className="bx bx-menu-alt-right"></i>
+          </HamMenu>
+        )}
+        {open && (
+          <HamMenu onClick={() => setOpen(false)}>
+            <i className="bx bx-x"></i>
+          </HamMenu>
+        )}
       </Navblock>
+
+      {open && (
+        <SideNavbar
+          variants={SideList}
+          initial="initial"
+          animate="animate"
+          exit="exit">
+          <SideLinks>
+            {multipleLinks.map((data) => {
+              return (
+                <li key={data.path} onClick={() => setOpen(false)}>
+                  <Link href={data.path}>
+                    <a>{data.title}</a>
+                  </Link>
+                </li>
+              );
+            })}
+          </SideLinks>
+        </SideNavbar>
+      )}
     </NavBarContainer>
   );
 }

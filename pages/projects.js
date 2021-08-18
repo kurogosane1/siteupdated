@@ -75,8 +75,6 @@ const projects = (props) => {
                   <img
                     src={data.fields.cardImage[0].fields.file.url}
                     alt={data.fields.heading}
-                    // width={500}
-                    // height={400}
                     style={{ objectFit: "contain" }}
                   />
 
@@ -85,23 +83,32 @@ const projects = (props) => {
                     <h4> ---- </h4>
                     <h4>{data.fields.heading}</h4>
                     <p>{data.fields.description.content[0].content[0].value}</p>
-                    {data.fields.githubLink && (
-                      <Link href={data.fields.githubLink} passHref={true}>
-                        <a target="_blank">
-                          <i className="bx bxl-github"></i>
-                        </a>
-                      </Link>
-                    )}
-                    {websiteLink &&
-                      websiteLink.map((url, index) => {
-                        return (
-                          <Link href={url} passHref={true}>
-                            <a target="_blank">
-                              <i className="bx bx-link-external" />
-                            </a>
-                          </Link>
-                        );
-                      })}
+                    <Row
+                      style={{
+                        width: "100%",
+                        justifyContent: "space-evenly",
+                        alignItems: "center",
+                        padding: "10px",
+                        marginTop: "10px",
+                      }}>
+                      {data.fields.githubLink && (
+                        <Link href={data.fields.githubLink} passHref={true}>
+                          <a target="_blank">
+                            <i className="bx bxl-github"></i>
+                          </a>
+                        </Link>
+                      )}
+                      {websiteLink &&
+                        websiteLink.map((url, index) => {
+                          return (
+                            <Link href={url} passHref={true}>
+                              <a target="_blank">
+                                <i className="bx bx-link-external" />
+                              </a>
+                            </Link>
+                          );
+                        })}
+                    </Row>
                   </ProjectDescription>
                 </ProjectContainer>
               );

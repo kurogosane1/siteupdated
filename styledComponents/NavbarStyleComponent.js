@@ -74,7 +74,7 @@ export const SideNavbar = styled(motion.div)`
   top: 70px;
   height: calc(100vh - 70px);
   width: 100vw;
-  background-color: red;
+  background-color: #151515;
   z-index: 9999;
 `;
 

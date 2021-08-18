@@ -13,6 +13,7 @@ export const SubAboutContainer = styled(motion.div)`
   color: #f5f5f5;
   width: 100%;
   @media (max-width: 760px) {
+    margin-top: 10px;
     padding: 10px;
   }
 `;

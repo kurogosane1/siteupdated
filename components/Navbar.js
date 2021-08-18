@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import {
   NavBarContainer,
   Navblock,
@@ -31,7 +32,7 @@ function Navbar() {
   ];
 
   // This is where the state of the sidenavbar will be
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <NavBarContainer>
       <Navblock>
@@ -63,23 +64,29 @@ function Navbar() {
       </Navblock>
 
       {open && (
-        <SideNavbar
-          variants={SideList}
-          initial="initial"
-          animate="animate"
-          exit="exit">
-          <SideLinks>
-            {multipleLinks.map((data) => {
-              return (
-                <li key={data.path} onClick={() => setOpen(false)}>
-                  <Link href={data.path}>
-                    <a>{data.title}</a>
-                  </Link>
-                </li>
-              );
-            })}
-          </SideLinks>
-        </SideNavbar>
+        <AnimatePresence
+          exitBeforeEnter={true}
+          onExitComplete={() => {
+            setOpen(false);
+          }}>
+          <SideNavbar
+            variants={SideList}
+            initial="initial"
+            animate="animate"
+            exit="exit">
+            <SideLinks>
+              {multipleLinks.map((data) => {
+                return (
+                  <li key={data.path} onClick={() => setOpen(false)}>
+                    <Link href={data.path}>
+                      <a>{data.title}</a>
+                    </Link>
+                  </li>
+                );
+              })}
+            </SideLinks>
+          </SideNavbar>
+        </AnimatePresence>
       )}
     </NavBarContainer>
   );

@@ -6,15 +6,10 @@ export const ProjectContainer = styled(motion.div)`
   flex-direction: column;
   align-items: stretch;
   height: 600px;
-  /* height: 100%; */
   width: 500px;
   background: transparent;
-  /* margin: 0 2px; */
-  /* border-left: solid 1px;
-  border-right: solid 1px;
-  border-bottom: solid 1px; */
   transition: all ease 0.5s;
-  margin-bottom: 10px;
+  margin-bottom: auto;
   :hover {
     cursor: pointer;
     background-color: #373737db;
@@ -27,6 +22,12 @@ export const ProjectContainer = styled(motion.div)`
 
   @media (max-width: 960px) {
     width: 400px;
+    height: 500px;
+  }
+
+  @media (max-width: 760px) {
+    width: 400px;
+    height: auto;
   }
 `;
 
@@ -45,5 +46,12 @@ export const ProjectDescription = styled(motion.div)`
 
   @media (max-width: 960px) {
     width: 400px;
+    height: 100%;
+    align-items: stretch;
+  }
+
+  @media (max-width: 960px) {
+    width: 400px;
+    align-items: center;
   }
 `;

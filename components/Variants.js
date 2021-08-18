@@ -176,7 +176,7 @@ export const SideList = {
     opacity: 1,
   },
   exit: {
-    x: "100%",
+    x: "-100%",
     opacity: 0,
   },
 };

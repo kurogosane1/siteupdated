@@ -37,7 +37,7 @@ function Navbar() {
     <NavBarContainer>
       <Navblock>
         <Link href="/">
-          <i className="bx bxs-home" />
+          <i className="bx bxs-home" onClick={() => setOpen(false)} />
         </Link>
 
         <FrontLinks>

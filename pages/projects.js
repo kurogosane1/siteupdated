@@ -121,7 +121,7 @@ const projects = (props) => {
 
 export default projects;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const client = createClient({
     space: process.env.SPACE_ID,
     accessToken: process.env.ACCESS_TOKEN,

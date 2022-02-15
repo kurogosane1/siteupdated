@@ -194,7 +194,7 @@ const about = () => {
         </IntroSpan>
         <div>
           <i className="bx bx-mail-send"></i>
-          <AboutSpan>syedskhurshid@gmail.com</AboutSpan>
+          <AboutSpan></AboutSpan>
         </div>
       </SubAboutContainer>
       <SubAboutContainer
